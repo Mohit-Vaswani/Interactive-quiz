@@ -1,8 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@300&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+:root{
+    --primary-color: #BEADFA;
+}
+
+
 *{
     padding: 0;
     margin: 0;
+}
+
+.bg-primary{
+    background: var(--primary-color);
+}
+
+nav h2{
+    font-family: 'Handjet', cursive;
+}
+
+.main-modal{
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
+    z-index: 2000;
+    padding: 2rem;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quiz_modal{
+    min-width: 80%;
+    height: 700px;
+    background: #fff;
+    height: inherit;
+    overflow: hidden;
 }
