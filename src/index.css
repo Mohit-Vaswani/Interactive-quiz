@@ -40,7 +40,7 @@ nav h2{
 .quiz_modal{
     min-width: 80%;
     height: 700px;
-    background: #fff;
+    background: var(--primary-color);
     height: inherit;
     overflow: hidden;
 }
