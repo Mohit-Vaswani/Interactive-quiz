@@ -22,6 +22,10 @@ nav h2{
     font-family: 'Handjet', cursive;
 }
 
+.Handjet{
+    font-family: 'Handjet', cursive;
+}
+
 .main-modal{
     position: fixed;
     left: 0%;
@@ -41,6 +45,47 @@ nav h2{
     min-width: 80%;
     height: 700px;
     background: var(--primary-color);
-    height: inherit;
     overflow: hidden;
 }
+
+.active{
+    display: flex;
+}
+
+.inactive{
+    display: none;
+}
+
+/* Define the keyframes for the animation */
+@keyframes moveUpDown {
+    0% {
+      transform: translateY(0); /* Start position (no movement) */
+    }
+    50% {
+      transform: translateY(-30px); /* Move up */
+    }
+    100% {
+      transform: translateY(0); /* Return to start position */
+    }
+  }
+  
+  /* Apply the animation to the image */
+  .imageAnimation {
+    animation: moveUpDown 3s ease-in-out infinite; /* Adjust the duration as needed */
+  }
+  
+
+  .quiz-topic{
+    padding: 0.5rem 1rem;
+    background: white;
+    color: black;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.5rem;
+    transition: all 0.4s;
+  }
+
+  .quiz-topic:hover{
+    background: rgb(115, 255, 115);
+    cursor: pointer;
+  }
