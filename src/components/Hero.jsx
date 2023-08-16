@@ -18,10 +18,10 @@ const Hero = () => {
           <img src={Saly} alt="" className='mt-16 imageAnimation' />
         </nav>
       </aside>
-      <main className="w-8/12 h-screen bg-black text-white p-6 px-10 Handjet">
+      <main className="w-8/12 h-screen bg-black text-white p-6 px-10 Handjet flex flex-col items-center">
         <h1 className='text-6xl'>Are you Ready For the Quizzo?</h1>
         <h2 className='my-10 text-4xl'>Choose One Topic 🏆</h2>
-        <div className='flex flex-wrap gap-5'>
+        <div className='flex flex-wrap gap-5 w-9/12 justify-center'>
           <span className='quiz-topic'>Random</span>
           <span className='quiz-topic'>Geography</span>
           <span className='quiz-topic'>History</span>
