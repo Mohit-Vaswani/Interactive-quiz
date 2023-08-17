@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { useState } from "react";
 import QuizModal from "./QuizModal";
 import Saly from "/src/assets/Saly.svg"
+import { quizData } from '../quizdata';
 
 const Hero = () => {
   const [modalActive, setModalActive] = useState(false);
@@ -22,22 +23,11 @@ const Hero = () => {
         <h1 className='text-6xl'>Are you Ready For the Quizzo?</h1>
         <h2 className='my-10 text-4xl'>Choose One Topic 🏆</h2>
         <div className='flex flex-wrap gap-5 w-9/12 justify-center'>
-          <span className='quiz-topic'>Random</span>
-          <span className='quiz-topic'>Geography</span>
-          <span className='quiz-topic'>History</span>
-          <span className='quiz-topic'>Science</span>
-          <span className='quiz-topic'>Literature</span>
-          <span className='quiz-topic'>Art</span>
-          <span className='quiz-topic'>Music</span>
-          <span className='quiz-topic'>Movies</span>
-          <span className='quiz-topic'>Sports</span>
-          <span className='quiz-topic'>Technology</span>
-          <span className='quiz-topic'>Mathematics</span>
-          <span className='quiz-topic'>Nature</span>
-          <span className='quiz-topic'>Cuisine</span>
-          <span className='quiz-topic'>General Knowledge</span>
-          <span className='quiz-topic'>Language</span>
-          <span className='quiz-topic'>Pop Culture</span>
+          {quizData.topics.map((item) => (
+            <span className='quiz-topic' key={item.id}>
+              {item.topic}
+            </span>
+          ))}
         </div>
 
         <button className="p-10 py-3 border-2 border-white text-3xl font-semibold my-10" onClick={toggleModal}>Start the Quiz</button>
