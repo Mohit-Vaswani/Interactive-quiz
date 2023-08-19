@@ -3,11 +3,14 @@ import { useState } from "react";
 import QuizModal from "./QuizModal";
 import Saly from "/src/assets/Saly.svg"
 import { quizData } from '../quizdata';
+// import QuizOne from './QuizOne'; 
 
 const Hero = () => {
   const [modalActive, setModalActive] = useState(false);
+  const [selectedTopic, setSelectedTopic] = useState(null); // Added state for selected topic
 
-  const toggleModal = () => {
+  const toggleModal = (topicId) => {
+    setSelectedTopic(topicId); // Set the selected topic before opening the modal
     setModalActive(!modalActive);
   };
 
@@ -20,19 +23,21 @@ const Hero = () => {
         </nav>
       </aside>
       <main className="w-8/12 h-screen bg-black text-white p-6 px-10 Handjet flex flex-col items-center">
-        <h1 className='text-6xl'>Are you Ready For the Quizzo?</h1>
-        <h2 className='my-10 text-4xl'>Choose One Topic 🏆</h2>
+      <h1 className='text-6xl font-semibold'>Are you Ready For the Quizzo?</h1>
+        <h2 className='my-10 text-4xl font-semibold'>Choose One Topic to Start 🏆</h2>
         <div className='flex flex-wrap gap-5 w-9/12 justify-center'>
           {quizData.topics.map((item) => (
-            <span className='quiz-topic' key={item.id}>
+            <span
+              className='quiz-topic'
+              key={item.id}
+              onClick={() => toggleModal(item.id)} // Add onClick event to open modal with selected topic
+            >
               {item.topic}
             </span>
           ))}
         </div>
-
-        <button className="p-10 py-3 border-2 border-white text-3xl font-semibold my-10" onClick={toggleModal}>Start the Quiz</button>
       </main>
-      <QuizModal modalActive={modalActive} closeModal={toggleModal} />
+      <QuizModal modalActive={modalActive} closeModal={toggleModal} selectedTopic={selectedTopic} />
     </section>
   );
 }
